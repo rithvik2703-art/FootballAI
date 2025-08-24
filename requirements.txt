@@ -4,6 +4,6 @@ openai
 dotenv
 python-jose
 datetime
-sqlalchemy
 database
+SQLAlchemy
 models
