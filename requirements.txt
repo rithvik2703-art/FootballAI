@@ -1,2 +1,9 @@
 fastapi
 uvicorn
+openai
+dotenv
+python-jose
+datetime
+sqlalchemy
+database
+models
