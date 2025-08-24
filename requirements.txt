@@ -5,4 +5,4 @@ passlib[bcrypt]
 python-jose
 sqlalchemy==2.0.21
 pydantic
-openai==1.32.2
+openai
