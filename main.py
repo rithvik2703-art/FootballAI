@@ -119,6 +119,10 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
 # ------------------------------
 # Auth Endpoints
 # ------------------------------
+@app.get("/")
+def root():
+    return {"message": "Soccer AI API is running 🚀"}
+
 @app.post("/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter(models.User.username == user.username).first()
