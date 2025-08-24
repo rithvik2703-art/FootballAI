@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Soccer AI Coach - Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; background:#f3f5f8; }
+    .card { background:#fff; padding:30px; border-radius:14px; box-shadow:0 2px 8px rgba(0,0,0,.15); width:300px; display:flex; flex-direction:column; gap:12px; }
+    input { padding:10px; border:1px solid #d9dee5; border-radius:10px; width:100%; }
+    button { padding:10px; border:none; border-radius:10px; background:#1e90ff; color:#fff; font-weight:600; cursor:pointer; }
+    button:hover { filter:brightness(.95); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login / Register</h2>
+    <input id="username" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <button id="registerBtn">Register</button>
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <script>
+    const BASE_URL = "http://127.0.0.1:8000";
+
+    // --- Register ---
+    document.getElementById("registerBtn").addEventListener("click", async () => {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (!username || !password) return alert("Fill both fields");
+      try {
+        const res = await fetch(`${BASE_URL}/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+        let data;
+        try { data = await res.json(); } catch { data = {}; }
+        if (!res.ok) {
+          alert("⚠️ " + (data.detail || data.message || `HTTP ${res.status}`));
+          return;
+        }
+        alert("✅ Registered successfully! You can now login.");
+      } catch(e){ alert("⚠️ Network error or server not running"); }
+    });
+
+    // --- Login ---
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (!username || !password) return alert("Fill both fields");
+
+      const form = new URLSearchParams({ username, password });
+
+      try {
+        const res = await fetch(`${BASE_URL}/token`, { method: "POST", body: form });
+        // --- FIX: safe parsing ---
+        let data;
+        try { data = await res.json(); } catch { data = {}; }
+        if (!res.ok) {
+          alert("⚠️ " + (data.detail || data.message || `HTTP ${res.status}`));
+          return;
+        }
+        // --- end fix ---
+        localStorage.setItem("jwt", data.access_token);
+        alert("✅ Logged in successfully!");
+        window.location.href = "index.html";
+      } catch(e){ 
+        alert("⚠️ Network error or server not running"); 
+      }
+    });
+  </script>
+</body>
+</html>

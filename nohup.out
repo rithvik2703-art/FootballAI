@@ -1,0 +1,70 @@
+INFO:     Started server process [23839]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+(trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+INFO:     127.0.0.1:50089 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50089 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50089 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50091 - "OPTIONS /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50091 - "POST /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50097 - "OPTIONS /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50097 - "POST /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50099 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50099 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50099 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50099 - "DELETE /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50428 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50428 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50466 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50467 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50467 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50466 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50470 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50471 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50471 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50470 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50520 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50521 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50520 - "GET /v1/user/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50521 - "GET /v1/chat/history HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50583 - "OPTIONS /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50583 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50585 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50584 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50586 - "OPTIONS /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50586 - "POST /v1/coach HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50626 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50627 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50630 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50629 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50634 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50636 - "OPTIONS /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50636 - "POST /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50636 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50638 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50638 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50676 - "OPTIONS /v1/user/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50677 - "OPTIONS /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50727 - "OPTIONS /register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50727 - "POST /register HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:50727 - "POST /token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50729 - "GET /v1/chat/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50727 - "GET /v1/user/profile HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23839]
