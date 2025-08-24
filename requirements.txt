@@ -3,6 +3,6 @@ uvicorn
 python-dotenv
 passlib[bcrypt]
 python-jose
-sqlalchemy==2.0.21
+sqlalchemy==2.0.43
 pydantic
 openai
