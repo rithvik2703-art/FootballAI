@@ -6,3 +6,4 @@ python-jose
 sqlalchemy==2.0.43
 pydantic
 openai
+python-multipart
